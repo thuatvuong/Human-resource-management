@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Add Certificate</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        body {
+            background-color: white;
+        }
+
+        section {
+            background-color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="all" class="row">
+        <section class="col-lg-9 p-5 m-auto">
+            <h2 style="color: rgb(42, 138, 255); font-family: Arial, Helvetica, sans-serif">IT CERTIFICATE MANAGEMENT
+            </h2>
+            <hr style="border: 2px solid rgb(255, 223, 163)">
+            <form role="form" id="save-form">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="cert-id"><b>Cert Id <span style="color: red;">*</span></b></label>
+                        <input type="text" class="form-control" id="cert-id" name="cert-id" placeholder="Id">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="cost"><b>Cost <span style="color: red;">*</span></b></label>
+                        <input type="text" class="form-control" id="cost" name="cost" placeholder="Cost">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="cert-name"><b>Certification Name <span style="color: red;">*</span></b></label>
+                        <input type="text" class="form-control" id="cert-name" name="cert-name"
+                            placeholder="Certification Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="category"><b>Category <span style="color: red;">*</span></b></label>
+                        <select id="category" name="category" class="custom-select">
+                            <option value="Java">Java</option>
+                            <option value="NET">NET</option>
+                            <option value="JavaScript">JavaScript</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="mybtn">
+                        <button type="submit" class="btn btn-primary" id="btn-save">Save</button>
+                        <button type="reset" class="btn btn-danger" id="btn-reset">Reset</button>
+                    </div>
+                </div>
+            </form>
+            <div>
+                <table class="table table-bordered">
+                    <thead style="background-color: #eeae5f;">
+                        <tr>
+                            <th scope="col" width="10%">Id</th>
+                            <th scope="col" width="50%">Certification name</th>
+                            <th scope="col" width="15%">Cost ($)</th>
+                            <th scope="col" width="15%">Category</th>
+                            <th scope="col" width="10%">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="list-cert">
+                        <tr>
+                            <td>1</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>
+                                <!-- Button trigger modal -->
+                                <a href="#" class="card-link" data-toggle="modal"
+                                    data-target="#exampleModalCenter">
+                                    Delete
+                                </a>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Delete record</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Do you want to delete the record?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary">OK</button>
+                                                <button type="button" class="btn btn-outline-secondary"
+                                                    data-dismiss="modal">Cancel</button>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td>@mdo</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
+        integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!--    <script src="/js/validate.js"></script>-->
+    <script src="/js/admin.js"></script>
+    <script src="/js/toastr-config.js"></script>
+</body>
+
+</html>
